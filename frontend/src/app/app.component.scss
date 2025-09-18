@@ -1,0 +1,150 @@
+.feedback-container {
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 16px;
+  font-family: system-ui, Segoe UI, Roboto, Arial;
+  border-radius: 16px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+}
+
+.title-container {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 24px -30px;
+  width: 85%;
+}
+
+/* Полоса заголовка */
+.title-box {
+  position: relative;
+  background: #b22222;
+  color: #fff;
+  padding: 5px 5% 5px 24px;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 20px) 100%, 0 100%);
+  z-index: 2;
+}
+
+.title-box h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+/* Полоса задняя слева */
+.back-line {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 20px;
+  height: 10px;
+  background: #7f1818;
+  transform: rotate(45deg);
+  transform-origin: left bottom;
+  z-index: -1;
+}
+
+/* Тень полосы */
+.title-shadow {
+  position: absolute;
+  top: 6px;
+  left: 6px + 8px;
+  width: calc(100% - 8px);
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 20px) 100%, 0 100%);
+  filter: blur(6px);
+  z-index: 1;
+}
+
+/* Строки */
+.row {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.row label {
+  flex: 0 0 120px;
+  font-weight: bold;
+}
+
+.row input,
+.row select,
+.row textarea {
+  flex: 1 1 auto;
+  padding: 6px 10px;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+label {
+  font-weight: 600;
+  white-space: normal;
+  word-wrap: break-word;
+  color: #808080;
+}
+
+input,
+select,
+textarea {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.digits {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+}
+
+button {
+  display: block;
+  margin: 0 auto 12px;
+  padding: 8px 24px;
+  border: none;
+  background: #b22222;
+  color: #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.success {
+  padding: 16px;
+}
+
+.captcha-img {
+  cursor: pointer;
+  width: 150px;
+}
+
+.error-message {
+  color: #d32f2f;
+  padding: 4px;
+}
+
+input.invalid,
+select.invalid,
+textarea.invalid {
+  border-color: #d32f2f;
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .feedback-container {
+    max-width: 85%;
+    margin: 20px auto;
+  }
+
+  .digits {
+    flex-direction: column;
+    min-width: 0;
+    align-items: normal;
+  }
+}

@@ -1,0 +1,89 @@
+<div class="feedback-container">
+  <div class="title-container">
+    <div class="title-shadow"></div>
+    <div class="title-box">
+      <h1>Напишите нам</h1>
+    </div>
+    <div class="back-line"></div>
+  </div>
+
+  <div *ngIf="!submitted()">
+    <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+      <div class="row">
+        <label>Ваше имя:</label>
+        <input type="text" formControlName="name" placeholder="Имя" />
+      </div>
+
+      <div class="row">
+        <label>Ваш Email:</label>
+        <input
+          type="email"
+          formControlName="email"
+          placeholder="example@mail.ru"
+          (blur)="emailCtrl.markAsTouched()"
+          [class.invalid]="emailCtrl.touched && emailCtrl.invalid"
+        />
+        <div class="error-message" *ngIf="emailCtrl.touched && emailCtrl.errors as e">
+          <ng-container *ngIf="e['required']">Укажите email</ng-container>
+          <ng-container *ngIf="e['pattern']">Неверный формат email</ng-container>
+        </div>
+      </div>
+
+      <div class="row">
+        <label>Ваш телефон:</label>
+        <input
+          type="text"
+          formControlName="phone"
+          placeholder="+7 (999) 123-45-67"
+          mask="(000) 000-00-00"
+          prefix="+7 "
+          [dropSpecialCharacters]="false"
+          (blur)="phoneCtrl.markAsTouched()"
+          [class.invalid]="phoneCtrl.touched && phoneCtrl.invalid"
+        />
+        <div class="error-message" *ngIf="phoneCtrl.touched && phoneCtrl.errors as e">
+          <ng-container *ngIf="e['required']">Укажите телефон</ng-container>
+          <ng-container *ngIf="e['pattern']">Неверный формат телефона</ng-container>
+        </div>
+      </div>
+
+      <div class="row">
+        <label>Тема:</label>
+        <select formControlName="topic_id">
+          <option [ngValue]="null" disabled>Выберите тему</option>
+          <option *ngFor="let t of topics()" [ngValue]="t.id">{{ t.name }}</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label>Ваше сообщение:</label>
+        <textarea formControlName="text" rows="5" placeholder="Ваше сообщение..."></textarea>
+      </div>
+
+      <div class="row">
+        <label>Цифры:</label>
+        <div class="digits">
+          <input type="text" formControlName="captchaInput" maxlength="5" placeholder="12345" />
+          <img
+            [src]="captchaUrl"
+            crossorigin="use-credentials"
+            (click)="refreshCaptcha()"
+            alt="captcha"
+            class="captcha-img"
+          />
+          <div *ngIf="captchaError" class="error-message">
+            Неверная капча,<br />
+            попробуйте ещё раз
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="form.invalid">Отправить письмо!</button>
+    </form>
+  </div>
+
+  <div *ngIf="submitted()" class="success">
+    <h2>Спасибо! Ваше сообщение сохранено.</h2>
+    <pre>{{ savedMessage() | json }}</pre>
+  </div>
+</div>

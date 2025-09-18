@@ -1,0 +1,10 @@
+html {
+  background-color: #f5f5f5;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(150, 150, 150, 0.3) 0px /* цвет линии начинается с 0px */,
+    rgba(150, 150, 150, 0.3) 1px /* толщина линии (заканчивается на 1px) */,
+    transparent 1px /* сразу после линии идёт прозрачная зона */,
+    transparent 5px /* прозрачность продолжается до 5px → шаг */
+  );
+}
