@@ -57,11 +57,11 @@ using (var scope = app.Services.CreateScope())
     db.Database.Migrate();
 }
 
-app.UseCors("AllowFrontend");
-
 app.UseHttpsRedirection();
 
 app.UseSession();
+
+app.UseCors("AllowFrontend");
 
 app.MapControllers();
 
