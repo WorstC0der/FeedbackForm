@@ -1,67 +1,67 @@
 {
-  "hash": "36d05010",
-  "configHash": "a5a51751",
+  "hash": "e8c0abb7",
+  "configHash": "28f7ca65",
   "lockfileHash": "76d9f276",
-  "browserHash": "9f9f0b22",
+  "browserHash": "18710023",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "462a2c34",
+      "fileHash": "e4209ef6",
       "needsInterop": false
     },
     "@angular/common/http": {
       "src": "../../../../../../node_modules/@angular/common/fesm2022/http.mjs",
       "file": "@angular_common_http.js",
-      "fileHash": "78b00b31",
+      "fileHash": "27b9104b",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "1ad13b6a",
+      "fileHash": "8c256ecf",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "ea62485b",
+      "fileHash": "89064c29",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "6a43696b",
+      "fileHash": "d0d4a1a5",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "85d00c23",
+      "fileHash": "f9f17561",
       "needsInterop": false
     },
     "ngx-mask": {
       "src": "../../../../../../node_modules/ngx-mask/fesm2022/ngx-mask.mjs",
       "file": "ngx-mask.js",
-      "fileHash": "c2d7a421",
+      "fileHash": "bcb23155",
       "needsInterop": false
     },
     "zone.js": {
       "src": "../../../../../../node_modules/zone.js/fesm2015/zone.js",
       "file": "zone__js.js",
-      "fileHash": "5c401994",
+      "fileHash": "a1877a25",
       "needsInterop": true
     }
   },
   "chunks": {
+    "chunk-77LEPX3V": {
+      "file": "chunk-77LEPX3V.js"
+    },
     "chunk-HAMQJWXE": {
       "file": "chunk-HAMQJWXE.js"
     },
     "chunk-7BR6L2MV": {
       "file": "chunk-7BR6L2MV.js"
-    },
-    "chunk-77LEPX3V": {
-      "file": "chunk-77LEPX3V.js"
     },
     "chunk-4TPI4CB7": {
       "file": "chunk-4TPI4CB7.js"
