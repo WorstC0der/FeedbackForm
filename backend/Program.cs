@@ -35,7 +35,7 @@ builder.Services.AddCors(options =>
             .AllowAnyMethod()
             .AllowCredentials()
             .WithOrigins(
-                builder.Configuration.GetValue<string>("FrontendOrigin") ?? "http://localhost:4200"
+                builder.Configuration.GetValue<string>("FrontendOrigin") ?? "https://feedbackformfrontend-82g9.onrender.com"
             ));
 });
 
