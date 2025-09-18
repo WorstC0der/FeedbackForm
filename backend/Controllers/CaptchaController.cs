@@ -2,11 +2,13 @@ using CaptchaGen;
 using Microsoft.AspNetCore.Mvc;
 using System.Drawing;
 using System.Drawing.Imaging;
+using Microsoft.AspNetCore.Cors;
 
 namespace FeedbackApi.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[EnableCors("AllowFrontend")]
 public class CaptchaController : ControllerBase
 {
     private const string SessionKey = "CaptchaCode";
