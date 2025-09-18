@@ -1,7 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environment';
 
 export interface Topic {
   id: number;
@@ -27,27 +26,27 @@ export interface MessageResponse {
 @Injectable({ providedIn: 'root' })
 export class ApiService {
   private http = inject(HttpClient);
-  private baseUrl = 'https://localhost:7180/api';
+  private baseUrl = 'https://feedbackformbackend-431l.onrender.com';
 
   getTopics(): Observable<Topic[]> {
-    return this.http.get<Topic[]>(`${environment.apiUrl}/topics`);
+    return this.http.get<Topic[]>(`${this.baseUrl}/topics`);
   }
 
   createMessage(payload: MessageCreate): Observable<MessageResponse> {
-    return this.http.post<MessageResponse>(`${environment.apiUrl}/messages`, payload, {
+    return this.http.post<MessageResponse>(`${this.baseUrl}/messages`, payload, {
       withCredentials: true,
     });
   }
 
   validateCaptcha(code: string) {
     return this.http.post<{ ok: boolean }>(
-      `${environment.apiUrl}/captcha/validate`,
+      `${this.baseUrl}/captcha/validate`,
       { code },
       { withCredentials: true }
     );
   }
 
   getCaptchaUrl(): string {
-    return `${environment.apiUrl}/captcha?ts=${Date.now()}`;
+    return `${this.baseUrl}/captcha?ts=${Date.now()}`;
   }
 }
