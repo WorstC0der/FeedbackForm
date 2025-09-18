@@ -1,8 +1,11 @@
-using CaptchaGen;
 using Microsoft.AspNetCore.Mvc;
-using System.Drawing;
-using System.Drawing.Imaging;
 using Microsoft.AspNetCore.Cors;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.PixelFormats;
+using SixLabors.ImageSharp.Processing;
+using SixLabors.ImageSharp.Drawing.Processing;
+using SixLabors.Fonts;
+using System.IO;
 
 namespace FeedbackApi.Controllers;
 
@@ -19,9 +22,20 @@ public class CaptchaController : ControllerBase
         var code = Random.Shared.Next(10000, 99999).ToString();
         HttpContext.Session.SetString(SessionKey, code);
 
-        // цифры, высота, ширина, размер шрифта, искажение
-        var bytes = ImageFactory.GenerateImage(code, 50, 150, 24, 2);
-        return File(bytes, "image/png");
+        using var image = new Image<Rgba32>(150, 50);
+
+        // Заливаем фон белым
+        image.Mutate(ctx => ctx.Fill(Color.White));
+
+        // Создаем шрифт
+        var font = SystemFonts.CreateFont("Arial", 24);
+
+        // Рисуем текст
+        image.Mutate(ctx => ctx.DrawText(code, font, Color.Black, new PointF(10, 10)));
+
+        using var ms = new MemoryStream();
+        image.SaveAsPng(ms);
+        return File(ms.ToArray(), "image/png");
     }
 
     public record CaptchaValidateRequest(string Code);
@@ -45,5 +59,3 @@ public class CaptchaController : ControllerBase
         return Ok(new { ok = true });
     }
 }
-
-

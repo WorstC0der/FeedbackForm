@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\unuka\\OneDrive\\Документы\\ВСЁ ВАЖНОЕ\\Проекты\\feedback-form\\backend\\FeedbackApi.csproj": {}
+    "C:\\Users\\unuka\\OneDrive\\Документы\\GitHub\\FeedbackForm\\backend\\FeedbackApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\unuka\\OneDrive\\Документы\\ВСЁ ВАЖНОЕ\\Проекты\\feedback-form\\backend\\FeedbackApi.csproj": {
+    "C:\\Users\\unuka\\OneDrive\\Документы\\GitHub\\FeedbackForm\\backend\\FeedbackApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\unuka\\OneDrive\\Документы\\ВСЁ ВАЖНОЕ\\Проекты\\feedback-form\\backend\\FeedbackApi.csproj",
+        "projectUniqueName": "C:\\Users\\unuka\\OneDrive\\Документы\\GitHub\\FeedbackForm\\backend\\FeedbackApi.csproj",
         "projectName": "FeedbackApi",
-        "projectPath": "C:\\Users\\unuka\\OneDrive\\Документы\\ВСЁ ВАЖНОЕ\\Проекты\\feedback-form\\backend\\FeedbackApi.csproj",
+        "projectPath": "C:\\Users\\unuka\\OneDrive\\Документы\\GitHub\\FeedbackForm\\backend\\FeedbackApi.csproj",
         "packagesPath": "C:\\Users\\unuka\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\unuka\\OneDrive\\Документы\\ВСЁ ВАЖНОЕ\\Проекты\\feedback-form\\backend\\obj\\",
+        "outputPath": "C:\\Users\\unuka\\OneDrive\\Документы\\GitHub\\FeedbackForm\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "F:\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -71,6 +71,18 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[8.0.4, )"
+            },
+            "SixLabors.Fonts": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "SixLabors.ImageSharp": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "SixLabors.ImageSharp.Drawing": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
