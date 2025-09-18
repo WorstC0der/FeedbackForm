@@ -26,7 +26,7 @@ export interface MessageResponse {
 @Injectable({ providedIn: 'root' })
 export class ApiService {
   private http = inject(HttpClient);
-  private baseUrl = 'https://feedbackformbackend-431l.onrender.com';
+  private baseUrl = 'https://feedbackformbackend-431l.onrender.com/api';
 
   getTopics(): Observable<Topic[]> {
     return this.http.get<Topic[]>(`${this.baseUrl}/topics`);
