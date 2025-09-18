@@ -29,15 +29,16 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // Настройка CORS для Angular
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowFrontend",
-        policy => policy
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy
+            .WithOrigins("https://feedbackformfrontend-82g9.onrender.com")
             .AllowAnyHeader()
             .AllowAnyMethod()
-            .AllowCredentials()
-            .WithOrigins(
-                builder.Configuration.GetValue<string>("FrontendOrigin") ?? "https://feedbackformfrontend-82g9.onrender.com"
-            ));
+            .AllowCredentials();
+    });
 });
+
 
 // Создание и запуск приложения
 var app = builder.Build();
