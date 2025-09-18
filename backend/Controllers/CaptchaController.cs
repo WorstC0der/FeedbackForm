@@ -27,7 +27,7 @@ public class CaptchaController : ControllerBase
         // Заливаем фон белым
         image.Mutate(ctx => ctx.Fill(Color.White));
 
-        // Создаем шрифт
+        // Шрифт
         var font = SystemFonts.CreateFont("Arial", 24);
 
         // Рисуем текст
@@ -35,6 +35,8 @@ public class CaptchaController : ControllerBase
 
         using var ms = new MemoryStream();
         image.SaveAsPng(ms);
+        ms.Seek(0, SeekOrigin.Begin);
+
         return File(ms.ToArray(), "image/png");
     }
 
