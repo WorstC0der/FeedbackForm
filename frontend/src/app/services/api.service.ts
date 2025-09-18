@@ -1,6 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface Topic {
   id: number;
@@ -29,24 +30,24 @@ export class ApiService {
   private baseUrl = 'https://localhost:7180/api';
 
   getTopics(): Observable<Topic[]> {
-    return this.http.get<Topic[]>(`${this.baseUrl}/topics`);
+    return this.http.get<Topic[]>(`${environment.apiUrl}/topics`);
   }
 
   createMessage(payload: MessageCreate): Observable<MessageResponse> {
-    return this.http.post<MessageResponse>(`${this.baseUrl}/messages`, payload, {
+    return this.http.post<MessageResponse>(`${environment.apiUrl}/messages`, payload, {
       withCredentials: true,
     });
   }
 
   validateCaptcha(code: string) {
     return this.http.post<{ ok: boolean }>(
-      `${this.baseUrl}/captcha/validate`,
+      `${environment.apiUrl}/captcha/validate`,
       { code },
       { withCredentials: true }
     );
   }
 
   getCaptchaUrl(): string {
-    return `${this.baseUrl}/captcha?ts=${Date.now()}`;
+    return `${environment.apiUrl}/captcha?ts=${Date.now()}`;
   }
 }
