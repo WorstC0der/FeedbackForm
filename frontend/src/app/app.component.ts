@@ -44,7 +44,15 @@ export class AppComponent {
   }
 
   refreshCaptcha() {
-    this.captchaUrl = this.api.getCaptchaUrl();
+    this.api.getCaptchaBlob().subscribe({
+      next: (blob) => {
+        // создаём URL для изображения капчи
+        this.captchaUrl = URL.createObjectURL(blob);
+      },
+      error: () => {
+        console.error('Не удалось загрузить капчу');
+      },
+    });
   }
 
   get emailCtrl(): AbstractControl<any, any> {

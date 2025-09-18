@@ -49,4 +49,11 @@ export class ApiService {
   getCaptchaUrl(): string {
     return `${this.baseUrl}/captcha?ts=${Date.now()}`;
   }
+
+  getCaptchaBlob(): Observable<Blob> {
+    return this.http.get(`${this.baseUrl}/captcha?ts=${Date.now()}`, {
+      responseType: 'blob',
+      withCredentials: true,
+    });
+  }
 }

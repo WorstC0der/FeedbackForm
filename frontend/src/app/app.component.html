@@ -64,13 +64,8 @@
         <label>Цифры:</label>
         <div class="digits">
           <input type="text" formControlName="captchaInput" maxlength="5" placeholder="12345" />
-          <img
-            [src]="captchaUrl"
-            crossorigin="use-credentials"
-            (click)="refreshCaptcha()"
-            alt="captcha"
-            class="captcha-img"
-          />
+          <img [src]="captchaUrl" (click)="refreshCaptcha()" alt="captcha" class="captcha-img" />
+
           <div *ngIf="captchaError" class="error-message">
             Неверная капча,<br />
             попробуйте ещё раз
