@@ -28,7 +28,7 @@ public class CaptchaController : ControllerBase
         image.Mutate(ctx => ctx.Fill(Color.White));
 
         // Шрифт
-        var font = SystemFonts.CreateFont("Arial", 24);
+        var font = SystemFonts.Collection.Families.First().CreateFont(24);
 
         // Рисуем текст
         image.Mutate(ctx => ctx.DrawText(code, font, Color.Black, new PointF(10, 10)));
