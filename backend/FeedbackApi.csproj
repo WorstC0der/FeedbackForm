@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="fonts\arial.ttf" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="fonts\**\*.*" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>
