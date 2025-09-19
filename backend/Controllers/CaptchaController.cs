@@ -28,7 +28,7 @@ public class CaptchaController : ControllerBase
         image.Mutate(ctx => ctx.Fill(Color.White));
 
         // Шрифт
-        var fontPath = Path.Combine(AppContext.BaseDirectory, "fonts", "ariali.ttf");
+        var fontPath = Path.Combine(AppContext.BaseDirectory, "fonts", "ARIALI.TTF");
         using var fontStream = System.IO.File.OpenRead(fontPath);
         var collection = new FontCollection();
         var family = collection.Add(fontStream);
